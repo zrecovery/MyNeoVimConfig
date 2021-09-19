@@ -6,6 +6,9 @@ require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'nvim-treesitter/nvim-treesitter' -- Tree Sitter Plugin
+  use 'glepnir/lspsaga.nvim' -- LSP UI
+  use 'kyazdani42/nvim-tree.lua' -- File Tree
+  use 'kyazdani42/nvim-web-devicons'
 end)
 
 -- Add additional capabilities supported by nvim-cmp
@@ -148,3 +151,49 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+-- LSP UI
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
+  max_preview_lines = 30,
+  finder_action_keys = {
+  open = 'o', vsplit = 's',split = 'i',quit = {'q', "<esc>"},scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+  },
+  code_action_keys = {
+    quit = {'q', "<esc>"},exec = '<CR>'
+  },
+  rename_action_keys = {
+    quit = {'<C-c>', "<esc>"},exec = '<CR>'  -- quit can be a table
+  },
+}
+
+require("nvim-tree.events").on_nvim_tree_ready(
+    function()
+      vim.cmd("NvimTreeRefresh")
+    end
+  )
+  vim.g.nvim_tree_follow = 1
+  vim.g.nvim_tree_hide_dotfiles = 1
+  vim.g.nvim_tree_indent_markers = 1
+  vim.g.nvim_tree_bindings = {
+    { key = "l", cb = ":lua  require'nvim-tree'.on_keypress('edit')<CR>"},
+    { key = "<Tab>", mode = "v", cb = ":lua some_func()<cr>"},
+    { key = "s", cb = ":lua require'nvim-tree'.on_keypress('vsplit')<CR>"},
+    { key = "i", cb = ":lua require'nvim-tree'.on_keypress('split')<CR>"},
+  }
+  vim.g.nvim_tree_icons = {
+    default =  '',
+    symlink =  '',
+    git = {
+     unstaged = "✚",
+     staged =  "✚",
+     unmerged =  "≠",
+     renamed =  "≫",
+     untracked = "★",
+    },
+  }
+
