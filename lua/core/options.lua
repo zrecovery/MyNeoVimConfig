@@ -50,7 +50,6 @@ local function load_options()
     infercase      = true;
     incsearch      = true;
     wrapscan       = true;
-    complete       = ".,w,b,k";
     inccommand     = "nosplit";
     grepformat     = "%f:%l:%c:%m";
     grepprg        = 'rg --hidden --vimgrep --smart-case --';
@@ -62,7 +61,6 @@ local function load_options()
     switchbuf      = "useopen";
     backspace      = "indent,eol,start";
     diffopt        = "filler,iwhite,internal,algorithm:patience";
-    completeopt    = "menuone,noselect";
     jumpoptions    = "stack";
     showmode       = false;
     shortmess      = "aoOTIcF";
