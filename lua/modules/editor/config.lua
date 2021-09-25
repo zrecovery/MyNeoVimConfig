@@ -17,9 +17,7 @@ function config.nvim_colorizer()
     vim = { names = true; };
     tmux = { names = false; };
     'javascript';
-    'javascriptreact';
     'typescript';
-    'typescriptreact';
     html = {
       mode = 'foreground';
     }

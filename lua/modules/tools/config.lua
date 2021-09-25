@@ -50,7 +50,6 @@ function config.vim_vista()
     pandoc = 'markdown',
     markdown = 'toc',
     typescript = 'nvim_lsp',
-    typescriptreact =  'nvim_lsp',
   }
 end
 
