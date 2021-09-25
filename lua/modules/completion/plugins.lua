@@ -11,6 +11,7 @@ completion['glepnir/lspsaga.nvim'] = {
 }
 
 completion["hrsh7th/nvim-cmp"] = {
+  events = 'InsertEnter',
   requires = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
@@ -32,10 +33,18 @@ completion["onsails/lspkind-nvim"] = {
 }
 
 completion["L3MON4D3/LuaSnip"] = {
+  events = "InsertCharPre",
   config = conf.luasnip
 }
 
 completion["rafamadriz/friendly-snippets"] = {}
+
+
+completion['mattn/vim-sonictemplate'] = {
+  cmd = 'Template',
+  ft = {'go','typescript','lua','javascript','vim','markdown'},
+  config = conf.vim_sonictemplate,
+}
 
 completion['nvim-telescope/telescope.nvim'] = {
   cmd = 'Telescope',
