@@ -42,9 +42,6 @@ function config.dashboard()
     find_dotfiles = {
      description = {'  Open Personal dotfiles                  SPC f d'},
      command = 'Telescope dotfiles path=' .. home ..'/.dotfiles'},
-    go_source = {
-     description = {'  Find Go Source Code                     SPC f s'},
-     command = 'Telescope gosource'},
   }
 end
 
