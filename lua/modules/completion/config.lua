@@ -62,7 +62,7 @@ function config.lspcfg()
   }
   
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-    local servers = { 'gopls', 'pyright', 'sourcekit', 'tsserver'}
+    local servers = { 'gopls', 'pyright', 'sourcekit','clangd', 'tsserver'}
     for _, lsp in ipairs(servers) do
       require('lspconfig')[lsp].setup {
         capabilities = capabilities,
@@ -120,8 +120,22 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+local has_words_before = function()
+  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+    return false
+  end
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local feedkey = function(key)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), "n", true)
+end
+
+
 function config.cmp()
   local cmp = require "cmp"
+  local luasnip = require "luasnip"
   cmp.setup {
     snippet = {
       expand = function(args)
@@ -146,13 +160,25 @@ function config.cmp()
       end
     },
     mapping = {
-      ["<CR>"] = cmp.mapping.confirm(
-        {
-          behavior = cmp.ConfirmBehavior.Insert,
-          select = true
-        }
-      )
-    },
+      ['<Tab>'] = function(fallback)
+      if vim.fn.pumvisible() == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+      elseif luasnip.expand_or_jumpable() then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if vim.fn.pumvisible() == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+      elseif luasnip.jumpable(-1) then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+          },
     sources = {
       {name = "buffer"},
       {name = "nvim_lsp"},
@@ -218,6 +244,7 @@ function config.telescope()
   }
   require('telescope').load_extension('fzy_native')
   require'telescope'.load_extension('dotfiles')
+
 end
 
 function config.vim_sonictemplate()
