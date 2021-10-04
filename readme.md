@@ -8,6 +8,7 @@
 
 ### 必要依赖
 依赖|用途
+----|----
 ripgrep|快速搜索
 Treesitter|语法高亮
 lazygit|一个Git界面
