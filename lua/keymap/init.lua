@@ -9,11 +9,7 @@ local plug_map = {
     -- person keymap
     ["n|mf"]             = map_cr("<cmd>lua require('internal.fsevent').file_event()<CR>"):with_silent():with_nowait():with_noremap();
     ["n|gb"]             = map_cr("BufferLinePick"):with_noremap():with_silent(),
-    -- Packer
-    ["n|<leader>pu"]     = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait();
-    ["n|<leader>pi"]     = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait();
-    ["n|<leader>pc"]     = map_cr("PackerCompile"):with_silent():with_noremap():with_nowait();
-    -- Lsp mapp work when insertenter and lsp start
+   -- Lsp mapp work when insertenter and lsp start
     ["n|<leader>li"]     = map_cr("LspInfo"):with_noremap():with_silent():with_nowait(),
     ["n|<leader>lr"]     = map_cr("LspRestart"):with_noremap():with_silent():with_nowait(),
     ["n|<C-f>"]          = map_cmd("<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"):with_silent():with_noremap():with_nowait(),
@@ -57,7 +53,6 @@ local plug_map = {
     ["n|<Leader>fc"]     = map_cu('Telescope git_commits'):with_noremap():with_silent(),
     ["n|<Leader>ft"]     = map_cu('Telescope help_tags'):with_noremap():with_silent(),
     ["n|<Leader>fd"]     = map_cu('Telescope dotfiles path='..os.getenv("HOME")..'/.dotfiles'):with_noremap():with_silent(),
-    ["n|<Leader>fs"]     = map_cu('Telescope gosource'):with_noremap():with_silent(),
     -- prodoc
     ["n|gcc"]            = map_cu('ProComment'):with_noremap():with_silent(),
     ["x|gcc"]            = map_cr('ProComment'),
