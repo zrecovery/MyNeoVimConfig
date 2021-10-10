@@ -19,12 +19,17 @@
 依赖|用途
 ----|----
 ripgrep|快速搜索
-Treesitter|语法高亮
-lazygit|一个Git界面
+TreeSitter|语法高亮
+LazyGIT|一个Git界面
+Fzy|模糊搜索
+Node|部分语言服务需要(本项目实际上不需要)
+sumneko/lua-language-server|Lua语言服务
+apple/sourcekit-lsp|Swift语言服务
 
 ## 安装
 先安装NeoVim及必要依赖。
 将配置本项目复制至NeoVim配置文件夹下，再安装Packer包管理，之后运行`:PackerSync`。
+Lua语言服务需要手动设置路径，在`lua/modules/completion/config.lua`中。
 
 ## 快捷键
 默认Leader键为','。
