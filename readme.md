@@ -36,9 +36,32 @@ Lua语言服务需要手动设置路径，在`lua/modules/completion/config.lua`
 Key|Binding
 ---|-------
 <Leader>e|打开文件列表
+<Leader>F|查找文件
 <Leader>g|打开lazygit（一个Git界面）
 <Leader>td|Terminal（目前为Lspsaga浮动窗口的终端）
 <Leader>od|打开DBUI（数据库连接管理界面）
+<Leader>gb|切换缓存窗口
+<Leader>fz|查找及替换
+<Leader>bb|在缓存窗口中查找
+<Leader>fa|查找词汇
+<Leader>fb|查找文件
+<Leader>fg|在git文件中查找
+<Leader>fw|查找包含有关文本内容的文件
+<Leader>fh|查找历史
+<Leader>fl|查找本地列表
+<Leader>fc|查找版本控制提交
+<Leader>ft|查找帮助标签
+<Leader>fd|查找用户主目录下隐藏文件（实际为.开头文件名文件）
+gcc|自动添加注释
+gcj|添加文档
+<Leader>r|快速运行
+<Leader>v|在侧边栏中查看及搜索符号，标签
+sa|添加成对符号，如括号
+sd|删除成对符号
+sr|修改成对符号
+
+
+
 
 ## 致谢
 感谢glepnir的nvim项目。
