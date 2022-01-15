@@ -25,6 +25,17 @@ function config.lspcfg()
       require('lspconfig')[lsp].setup {
         capabilities = capabilities,
       }
+      if lsp == 'sumneko_lua' then
+        require('lspconfig')[lsp].setup{
+           settings = {
+              Lua = {
+                diagnostics = {
+                  globals = { 'vim', 'packer_plugins'}
+                }
+              }
+            }
+         }
+      end
     end
 end
 
@@ -81,7 +92,7 @@ vim.o.completeopt = 'menuone,noselect'
 
 function config.cmp()
   local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
   
@@ -187,11 +198,11 @@ saga.init_lsp_saga {
 end
 
 function config.telescope()
-  if not packer_plugins['plenary.nvim'].loaded then
-    vim.cmd [[packadd plenary.nvim]]
-    vim.cmd [[packadd popup.nvim]]
-    vim.cmd [[packadd telescope-fzy-native.nvim]]
-  end
+--  if not packer_plugins['plenary.nvim'].loaded then
+  --     vim.cmd [[packadd plenary.nvim]]
+  --     vim.cmd [[packadd popup.nvim]]
+  --     vim.cmd [[packadd telescope-fzy-native.nvim]]
+  -- end
   require('telescope').setup {
     defaults = {
       prompt_prefix = '🔭 ',

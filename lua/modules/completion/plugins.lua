@@ -23,11 +23,6 @@ completion["hrsh7th/nvim-cmp"] = {
   config = conf.cmp
 }
 
-completion["tzachar/cmp-tabnine"] = {
-  run = "./install.sh",
-  requires = "hrsh7th/nvim-cmp"
-}
-
 completion["onsails/lspkind-nvim"] = {
   requires = "hrsh7th/nvim-cmp",
   config = conf.kind
@@ -51,9 +46,9 @@ completion['nvim-telescope/telescope.nvim'] = {
   cmd = 'Telescope',
   config = conf.telescope,
   requires = {
-    {'nvim-lua/popup.nvim', opt = true},
-    {'nvim-lua/plenary.nvim',opt = true},
-    {'nvim-telescope/telescope-fzy-native.nvim',opt = true},
+    {'nvim-lua/popup.nvim'},
+    {'nvim-lua/plenary.nvim'},
+    {'nvim-telescope/telescope-fzy-native.nvim'},
   }
 }
 return completion
