@@ -1,9 +1,5 @@
 local config = {}
 
-function config.galaxyline()
-  require('modules.ui.eviline')
-end
-
 function config.nvim_bufferline()
   require('bufferline').setup{
     options = {

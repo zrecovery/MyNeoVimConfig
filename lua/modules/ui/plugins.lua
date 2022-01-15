@@ -9,9 +9,10 @@ ui['glepnir/dashboard-nvim'] = {
   config = conf.dashboard
 }
 
-ui['glepnir/galaxyline.nvim'] = {
-  branch = 'main',
-  config = conf.galaxyline,
+ui['NTBBloodbath/galaxyline.nvim'] = {
+  config = function()
+    require("galaxyline.themes.eviline")
+  end,
   requires = 'kyazdani42/nvim-web-devicons'
 }
 
