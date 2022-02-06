@@ -5,7 +5,7 @@ completion['neovim/nvim-lspconfig'] = {
   config = conf.lspcfg,
 }
 
-completion['glepnir/lspsaga.nvim'] = {
+completion['tami5/lspsaga.nvim'] = {
   cmd = 'Lspsaga',
   config = conf.saga,
 }

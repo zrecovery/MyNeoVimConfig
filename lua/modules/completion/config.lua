@@ -20,7 +20,7 @@ function config.lspcfg()
   }
 
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-    local servers = { 'sourcekit', 'sumneko_lua'}
+    local servers = { 'sourcekit', 'sumneko_lua', 'svelte','tsserver'}
     for _, lsp in ipairs(servers) do
       require('lspconfig')[lsp].setup {
         capabilities = capabilities,
@@ -28,7 +28,10 @@ function config.lspcfg()
       if lsp == 'sumneko_lua' then
         require('lspconfig')[lsp].setup{
            settings = {
-              Lua = {
+                       Lua = {
+                              runtime = {
+                version = 'LuaJIT'
+              },
                 diagnostics = {
                   globals = { 'vim', 'packer_plugins'}
                 }
@@ -45,7 +48,7 @@ function config.kind()
       -- enables text annotations
       --
       -- default: true
-      with_text = true,
+      mode = true,
       -- default symbol map
       -- can be either 'default' (requires nerd-fonts font) or
       -- 'codicons' for codicon preset (requires vscode-codicons font)
@@ -92,7 +95,7 @@ vim.o.completeopt = 'menuone,noselect'
 
 function config.cmp()
   local has_words_before = function()
-    local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
   

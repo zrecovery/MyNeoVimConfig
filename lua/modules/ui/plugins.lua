@@ -1,12 +1,10 @@
 local ui = {}
 local conf = require('modules.ui.config')
 
-ui['glepnir/zephyr-nvim'] = {
-  config = [[vim.cmd('colorscheme zephyr')]]
-}
-
-ui['glepnir/dashboard-nvim'] = {
-  config = conf.dashboard
+ui['Iron-E/nvim-highlite'] = {
+  config = function ()
+    vim.api.nvim_command 'colorscheme highlite'
+  end
 }
 
 ui['NTBBloodbath/galaxyline.nvim'] = {
