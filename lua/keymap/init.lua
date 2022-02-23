@@ -30,8 +30,8 @@ local plug_map = {
     ["n|<Leader>ct"]      = map_args("Template"),
     ["n|<Leader>tf"]     = map_cu('DashboardNewFile'):with_noremap():with_silent(),
     -- Plugin nvim-tree
-    ["n|<Leader>e"]      = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
-    ["n|<Leader>F"]      = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
+    ["n|<Leader>e"]      = map_cr('NeoTreeFocusToggle'):with_noremap():with_silent(),
+    ["n|<Leader>F"]      = map_cr('NeoTreeFocus'):with_noremap():with_silent(),
     -- Plugin DadbodUI
     ["n|<Leader>od"]     = map_cr('DBUIToggle'):with_noremap():with_silent(),
     -- Plugin Floaterm
