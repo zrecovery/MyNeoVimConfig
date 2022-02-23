@@ -20,7 +20,7 @@ function config.lspcfg()
   }
 
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-    local servers = { 'sourcekit', 'sumneko_lua', 'svelte','tsserver'}
+    local servers = { 'sourcekit', 'sumneko_lua', 'svelte','tsserver', 'cssls'}
     for _, lsp in ipairs(servers) do
       require('lspconfig')[lsp].setup {
         capabilities = capabilities,
