@@ -15,17 +15,6 @@ local function load_env_file()
   return env_contents
 end
 
-local function load_dbs()
-  local env_contents = load_env_file()
-  local dbs = {}
-  for key,value in pairs(env_contents) do
-    if vim.fn.stridx(key,"DB_CONNECTION_") >= 0 then
-      local db_name = vim.fn.split(key,"_")[3]:lower()
-      dbs[db_name] = value
-    end
-  end
-  return dbs
-end
 
 function config.vim_dadbod_ui()
   if packer_plugins['vim-dadbod'] and not packer_plugins['vim-dadbod'].loaded then

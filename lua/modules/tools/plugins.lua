@@ -8,12 +8,9 @@ tools['kristijanhusak/vim-dadbod-ui'] = {
 }
 
 tools['editorconfig/editorconfig-vim'] = {
-  ft = { 'go','typescript','javascript','vim','rust','zig','c','cpp' }
+  ft = { 'go','typescript','javascript','vim','c'}
 }
 
-tools['glepnir/prodoc.nvim'] = {
-  event = 'BufReadPre'
-}
 
 tools['liuchengxu/vista.vim'] = {
   cmd = 'Vista',

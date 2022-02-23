@@ -29,8 +29,5 @@ editor['rhysd/vim-operator-surround'] = {
   requires = 'kana/vim-operator-user'
 }
 
-editor['kana/vim-niceblock']  = {
-  opt = true
-}
 
 return editor

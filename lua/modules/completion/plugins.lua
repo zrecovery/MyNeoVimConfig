@@ -35,13 +35,6 @@ completion["L3MON4D3/LuaSnip"] = {
 
 completion["rafamadriz/friendly-snippets"] = {}
 
-
-completion['mattn/vim-sonictemplate'] = {
-  cmd = 'Template',
-  ft = {'go','typescript','lua','javascript','vim','markdown'},
-  config = conf.vim_sonictemplate,
-}
-
 completion['nvim-telescope/telescope.nvim'] = {
   cmd = 'Telescope',
   config = conf.telescope,
