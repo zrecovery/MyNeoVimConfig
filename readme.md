@@ -22,9 +22,7 @@ ripgrep|快速搜索
 TreeSitter|语法高亮
 LazyGIT|一个Git界面
 Fzy|模糊搜索
-Node|部分语言服务需要(本项目实际上不需要)
-sumneko/lua-language-server|Lua语言服务
-apple/sourcekit-lsp|Swift语言服务
+
 
 ## 安装
 先安装NeoVim及必要依赖。
@@ -39,7 +37,6 @@ Key|Binding
 <Leader>F|查找文件
 <Leader>g|打开lazygit（一个Git界面）
 <Leader>td|Terminal（目前为Lspsaga浮动窗口的终端）
-<Leader>od|打开DBUI（数据库连接管理界面）
 <Leader>gb|切换缓存窗口
 <Leader>fz|查找及替换
 <Leader>bb|在缓存窗口中查找
@@ -52,13 +49,6 @@ Key|Binding
 <Leader>fc|查找版本控制提交
 <Leader>ft|查找帮助标签
 <Leader>fd|查找用户主目录下隐藏文件（实际为.开头文件名文件）
-gcc|自动添加注释
-gcj|添加文档
-<Leader>r|快速运行
-<Leader>v|在侧边栏中查看及搜索符号，标签
-sa|添加成对符号，如括号
-sd|删除成对符号
-sr|修改成对符号
 
 
 
