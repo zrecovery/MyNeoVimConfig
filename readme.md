@@ -33,22 +33,22 @@ Lua语言服务需要手动设置路径，在`lua/modules/completion/config.lua`
 默认Leader键为','。
 Key|Binding
 ---|-------
-<Leader>e|打开文件列表
-<Leader>F|查找文件
-<Leader>g|打开lazygit（一个Git界面）
-<Leader>td|Terminal（目前为Lspsaga浮动窗口的终端）
-<Leader>gb|切换缓存窗口
-<Leader>fz|查找及替换
-<Leader>bb|在缓存窗口中查找
-<Leader>fa|查找词汇
-<Leader>fb|查找文件
-<Leader>fg|在git文件中查找
-<Leader>fw|查找包含有关文本内容的文件
-<Leader>fh|查找历史
-<Leader>fl|查找本地列表
-<Leader>fc|查找版本控制提交
-<Leader>ft|查找帮助标签
-<Leader>fd|查找用户主目录下隐藏文件（实际为.开头文件名文件）
+/<Leader/>e|打开文件列表
+/<Leader/>F|查找文件
+/<Leader/>g|打开lazygit（一个Git界面）
+/<Leader/>td|Terminal（目前为Lspsaga浮动窗口的终端）
+/<Leader/>gb|切换缓存窗口
+/<Leader/>fz|查找及替换
+/<Leader/>bb|在缓存窗口中查找
+/<Leader/>fa|查找词汇
+/<Leader/>fb|查找文件
+/<Leader/>fg|在git文件中查找
+/<Leader/>fw|查找包含有关文本内容的文件
+/<Leader/>fh|查找历史
+/<Leader/>fl|查找本地列表
+/<Leader/>fc|查找版本控制提交
+/<Leader/>ft|查找帮助标签
+/<Leader/>fd|查找用户主目录下隐藏文件（实际为.开头文件名文件）
 
 
 
