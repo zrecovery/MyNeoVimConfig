@@ -8,6 +8,7 @@ ui['Iron-E/nvim-highlite'] = {
 }
 
 ui['nvim-neo-tree/neo-tree.nvim'] = {
+  branch = "main",
   config = conf.nvim_neo_tree,
   requires = {
     "nvim-lua/plenary.nvim",

@@ -28,7 +28,7 @@ local function load_options()
     wildignore     = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**";
     backup         = false;
     writebackup    = false;
-    swapfile       = false;
+    swapfile       = true;
     directory      = global.cache_dir .. "swag/";
     undodir        = global.cache_dir .. "undo/";
     backupdir      = global.cache_dir .. "backup/";
